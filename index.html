@@ -1,1 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>With and Without Translation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 50px;
+            height: 100vh;
+        }
+        .section {
+            width: 40%;
+            padding: 20px;
+            border: 2px solid #000;
+            text-align: center;
+            position: relative;
+            cursor: pointer;
+        }
+        .menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #f9f9f9;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+        .section:hover .menu {
+            display: block;
+        }
+        .menu a {
+            display: block;
+            padding: 8px;
+            text-decoration: none;
+            color: #000;
+        }
+        .menu a:hover {
+            background-color: #f1f1f1;
+        }
+        section {
+            margin: 50px 0;
+            padding: 20px;
+            border-top: 2px solid #000;
+            height: 100vh; /* Added height for scrolling effect */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="section" id="with-translation">
+            <h2>With Translation</h2>
+            <div class="menu">
+                <a href="#quran">Quran</a>
+                <a href="#sunnah">Sunnah | Prophet | Sahaba</a>
+                <a href="#salaf">The Salaf</a>
+            </div>
+        </div>
+
+        <div class="section" id="without-translation">
+            <h2>Without Translation</h2>
+            <div class="menu">
+                <!-- Empty menu for now -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Corresponding sections -->
+    <section id="quran">
+        <h2>Quran</h2>
+        <p>This section is about the Quran.</p>
+    </section>
+
+    <section id="sunnah">
+        <h2>Sunnah | Prophet | Sahaba</h2>
+        <p>This section is about the Sunnah, the Prophet, and the Sahaba.</p>
+    </section>
+
+    <section id="salaf">
+        <h2>The Salaf</h2>
+        <p>This section is about the Salaf.</p>
+    </section>
+
+    <script>
+        // Smooth scrolling behavior
+        document.querySelectorAll('.menu a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
 
