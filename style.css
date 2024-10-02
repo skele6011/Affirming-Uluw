@@ -1,6 +1,3 @@
-body {
-    background-color: lightblue;
-}
 :root {
     --dark-orange: #D35400;
     --light-orange: #F39C12;
@@ -38,43 +35,43 @@ h1 {
     cursor: pointer;
 }
 
+/* ... (keep the existing styles) ... */
+
 .sidebar {
     position: fixed;
     top: 0;
-    left: -250px;
+    left: -250px; /* Start off-screen */
     width: 250px;
     height: 100%;
     background-color: var(--light-orange);
     transition: left 0.3s ease;
     padding-top: 60px;
+    z-index: 1000; /* Ensure it's above other content */
 }
 
 .sidebar.active {
-    left: 0;
+    left: 0; /* Slide in when active */
 }
 
-.sidebar ul {
-    list-style-type: none;
-    padding: 0;
+.hamburger {
+    display: block; /* Show hamburger by default */
+    /* ... (keep other hamburger styles) ... */
 }
 
-.sidebar ul li a {
-    display: block;
-    padding: 10px 20px;
-    color: var(--dark-blue);
-    text-decoration: none;
-    transition: background-color 0.3s;
-}
-
-.sidebar ul li a:hover {
-    background-color: var(--dark-orange);
-    color: var(--off-white);
-}
-
-main {
-    padding: 20px;
-    margin-left: 0;
-    transition: margin-left 0.3s ease;
+@media (min-width: 769px) {
+    .sidebar {
+        left: -250px; /* Hide sidebar by default on larger screens too */
+    }
+    
+    main {
+        margin-left: 0; /* No margin by default */
+        transition: margin-left 0.3s ease;
+    }
+    
+    /* When sidebar is active on larger screens, push main content */
+    .sidebar.active + main {
+        margin-left: 250px;
+    }
 }
 
 section {
