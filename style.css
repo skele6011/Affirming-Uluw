@@ -11,6 +11,11 @@ header {
     align-items: center;
 }
 
+h1 {
+    margin: 0 0 0 1rem;
+    color: white;
+}
+
 .hamburger {
     background: none;
     border: none;
@@ -21,31 +26,45 @@ header {
     height: 24px;
     width: 30px;
     padding: 0;
+    z-index: 1001; /* Ensure it's above the sidebar */
 }
 
 .hamburger span {
     background-color: white;
     height: 3px;
     width: 100%;
+    transition: all 0.3s ease;
 }
 
 .sidebar {
     position: fixed;
-    top: 0;
+    top: 60px; /* Adjust based on your header height */
     left: 0;
-    width: 100%;
+    width: 250px;
+    height: calc(100% - 60px); /* Subtract header height */
     background-color: rgba(243, 156, 18, 0.9);
-    transform: translateY(-100%);
+    transform: translateX(-100%);
     transition: transform 0.3s ease;
+    z-index: 1000;
 }
 
 .sidebar.active {
-    transform: translateY(0);
+    transform: translateX(0);
 }
 
 .sidebar ul {
     list-style-type: none;
     padding: 20px;
+}
+
+.sidebar ul li {
+    margin-bottom: 10px;
+}
+
+.sidebar ul li a {
+    color: #2C3E50;
+    text-decoration: none;
+    font-size: 1.1em;
 }
 
 main {
