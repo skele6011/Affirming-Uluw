@@ -1,1 +1,72 @@
+/* Reset default margins and paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    display: flex;
+}
+
+/* Header styling */
+header {
+    background: #333;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    width: 100%;
+}
+
+/* Navigation Menu */
+.sidebar {
+    width: 200px; /* Width of the sidebar */
+    background: #f4f4f4; /* Background color */
+    padding: 15px; /* Padding */
+}
+
+.sidebar ul {
+    list-style: none; /* No bullets */
+}
+
+.sidebar ul li {
+    margin: 15px 0; /* Space between menu items */
+}
+
+.sidebar a {
+    text-decoration: none; /* No underlines */
+    color: #333; /* Text color */
+}
+
+.sidebar a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* Main content styling */
+main {
+    padding: 20px; /* Space around main content */
+    flex-grow: 1; /* Allow the main content to grow */
+}
+
+section {
+    margin: 20px 0; /* Space between sections */
+    background: white; /* Section background */
+    padding: 20px; /* Space within sections */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow */
+}
+
+/* Footer styling */
+footer {
+    text-align: center; /* Centered text */
+    padding: 10px 0; /* Padding */
+    background: #333; /* Footer background */
+    color: white; /* Footer text color */
+    position: relative; /* Positioning */
+    bottom: 0; /* Stick to the bottom */
+    width: 100%; /* Full width */
+}
 
