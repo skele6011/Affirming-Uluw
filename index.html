@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Affirming Uluw for Allah</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css"> <!-- Link to your CSS file -->
 </head>
 <body>
+    <!-- Header and Hamburger Menu -->
     <header>
-        <button class="hamburger" aria-label="Toggle menu">
+        <button class="hamburger" aria-label="Toggle menu" onclick="toggleMenu()">
             <span></span>
             <span></span>
             <span></span>
@@ -16,6 +17,7 @@
         <h1>Affirming Uluw for Allah</h1>
     </header>
 
+    <!-- Sidebar Navigation Menu -->
     <nav class="sidebar" id="sidebar">
         <ul>
             <li><a href="#quran">The Qur'an</a></li>
@@ -24,6 +26,7 @@
         </ul>
     </nav>
 
+    <!-- Main Content Sections -->
     <main>
         <section id="quran">
             <h2>The Qur'an</h2>
@@ -45,7 +48,7 @@
             </ul>
             <h3>The Sahaba:</h3>
             <div class="image-container">
-                <img src="https://raw.githubusercontent.com/skele6011/Affirming-Uluw/main/(Scan%20%2360)%20Proving%20Allah%20is%20above%20the%20throne%20(2)%20Proving%20Allah%20is%20fi%20or%20fawq%20as-sama2%20using%20the%20sahaba%20(2).png" alt="Sayings of the sahaba" class="sahaba-image">
+                <img src="https://raw.githubusercontent.com/skele6011/Affirming-Uluw/main/(Scan%20%2360)%20Proving%20Allah%20is%20above%20the%20throne%20(2)%20Proving%20Allah%20is%20fi%20or%20fawq%20as-sama2%20using%20the%20sahaba%20(2).png" alt="Sayings of the sahaba" class="sahaba-image" onclick="openModal(this)">
             </div>
         </section>
 
@@ -61,11 +64,12 @@
         </section>
     </main>
 
+    <!-- Modal for Image -->
     <div id="image-modal" class="modal">
-        <span class="close">&times;</span>
+        <span class="close" onclick="closeModal()">&times;</span>
         <img class="modal-content" id="img01" alt="Enlarged image">
     </div>
 
-    <script src="script.js"></script>
+    <script src="script.js"></script> <!-- Link to your JS file -->
 </body>
 </html>
