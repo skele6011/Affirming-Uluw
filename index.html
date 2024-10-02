@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website with Navigation Bar</title>
+    <title>Website with Interactive Menus</title>
     <style>
         /* Reset default margins and paddings */
         * {
@@ -37,15 +37,41 @@
             text-decoration: none;
             text-align: center;
             font-size: 18px;
+            position: relative; /* Necessary for positioning the dropdown */
         }
 
         .navbar a:hover {
             background-color: #575757;
         }
 
+        /* Dropdown menu styles */
+        .menu {
+            display: none; /* Hidden by default */
+            position: absolute; /* Positioned relative to the parent link */
+            background-color: #f9f9f9;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            z-index: 1000;
+        }
+
+        .navbar a:hover .menu {
+            display: block; /* Show the menu on hover */
+        }
+
+        .menu a {
+            display: block;
+            padding: 8px;
+            color: #333;
+            text-decoration: none;
+        }
+
+        .menu a:hover {
+            background-color: #ddd; /* Change background on hover */
+        }
+
         /* Add margin to the content so it's not hidden behind the fixed navbar */
         .content {
-            margin-top: 60px;
+            margin-top: 60px; /* Adjust based on the height of the navbar */
         }
 
         /* Section styles */
@@ -72,8 +98,18 @@
 
     <!-- Navigation bar -->
     <div class="navbar">
-        <a href="#quran">With Translation</a>
-        <a href="#sunnah">Without Translation</a>
+        <a href="#quran">With Translation
+            <div class="menu">
+                <a href="#quran">Qur'an</a>
+                <a href="#sunnah">Sunnah | Prophet | Sahaba</a>
+                <a href="#salaf">The Salaf</a>
+            </div>
+        </a>
+        <a href="#sunnah">Without Translation
+            <div class="menu">
+                <!-- Empty menu for now -->
+            </div>
+        </a>
     </div>
 
     <!-- Content -->
@@ -89,8 +125,8 @@
         </section>
 
         <section id="salaf">
-            <h2>Other Section</h2>
-            <p>This section could include more content if needed, such as teachings of the Salaf.</p>
+            <h2>The Salaf</h2>
+            <p>This section is intended for content about the Salaf (early generations of Islam).</p>
         </section>
     </div>
 
@@ -98,7 +134,9 @@
         // Smooth scrolling behavior for navigation links
         document.querySelectorAll('.navbar a').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
-                e.preventDefault();
+                if (this.querySelector('.menu')) {
+                    e.preventDefault(); // Prevent default only if there is a dropdown
+                }
                 document.querySelector(this.getAttribute('href')).scrollIntoView({
                     behavior: 'smooth'
                 });
