@@ -3,97 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>With and Without Translation</title>
+    <title>Website with Navigation Bar</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        /* Reset default margins and paddings */
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
-        .container {
+
+        /* Style for the body */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        /* Navigation bar styles */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #333;
+            padding: 10px 0;
             display: flex;
-            justify-content: space-around;
-            margin-top: 50px;
-            height: 100vh;
+            justify-content: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
         }
-        .section {
-            width: 40%;
-            padding: 20px;
-            border: 2px solid #000;
-            text-align: center;
-            position: relative;
-            cursor: pointer;
-        }
-        .menu {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: #f9f9f9;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            padding: 10px;
-            border: 1px solid #ccc;
-        }
-        .section:hover .menu {
-            display: block;
-        }
-        .menu a {
-            display: block;
-            padding: 8px;
+
+        .navbar a {
+            color: white;
+            padding: 14px 20px;
             text-decoration: none;
-            color: #000;
+            text-align: center;
+            font-size: 18px;
         }
-        .menu a:hover {
-            background-color: #f1f1f1;
+
+        .navbar a:hover {
+            background-color: #575757;
         }
+
+        /* Add margin to the content so it's not hidden behind the fixed navbar */
+        .content {
+            margin-top: 60px;
+        }
+
+        /* Section styles */
         section {
-            margin: 50px 0;
-            padding: 20px;
-            border-top: 2px solid #000;
-            height: 100vh; /* Added height for scrolling effect */
+            padding: 60px 20px;
+            height: 100vh; /* Ensures each section takes up the full height of the viewport */
+            border-bottom: 2px solid #ccc;
+        }
+
+        #quran {
+            background-color: #f0f0f0;
+        }
+
+        #sunnah {
+            background-color: #e0e0e0;
+        }
+
+        #salaf {
+            background-color: #d0d0d0;
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <div class="section" id="with-translation">
-            <h2>With Translation</h2>
-            <div class="menu">
-                <a href="#quran">Quran</a>
-                <a href="#sunnah">Sunnah | Prophet | Sahaba</a>
-                <a href="#salaf">The Salaf</a>
-            </div>
-        </div>
-
-        <div class="section" id="without-translation">
-            <h2>Without Translation</h2>
-            <div class="menu">
-                <!-- Empty menu for now -->
-            </div>
-        </div>
+    <!-- Navigation bar -->
+    <div class="navbar">
+        <a href="#quran">With Translation</a>
+        <a href="#sunnah">Without Translation</a>
     </div>
 
-    <!-- Corresponding sections -->
-    <section id="quran">
-        <h2>Quran</h2>
-        <p>This section is about the Quran.</p>
-    </section>
+    <!-- Content -->
+    <div class="content">
+        <section id="quran">
+            <h2>With Translation</h2>
+            <p>This section is about content with translation, such as Quran translations.</p>
+        </section>
 
-    <section id="sunnah">
-        <h2>Sunnah | Prophet | Sahaba</h2>
-        <p>This section is about the Sunnah, the Prophet, and the Sahaba.</p>
-    </section>
+        <section id="sunnah">
+            <h2>Without Translation</h2>
+            <p>This section is for content without translation, such as original Arabic texts or other untranslated works.</p>
+        </section>
 
-    <section id="salaf">
-        <h2>The Salaf</h2>
-        <p>This section is about the Salaf.</p>
-    </section>
+        <section id="salaf">
+            <h2>Other Section</h2>
+            <p>This section could include more content if needed, such as teachings of the Salaf.</p>
+        </section>
+    </div>
 
     <script>
-        // Smooth scrolling behavior
-        document.querySelectorAll('.menu a').forEach(anchor => {
+        // Smooth scrolling behavior for navigation links
+        document.querySelectorAll('.navbar a').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 document.querySelector(this.getAttribute('href')).scrollIntoView({
@@ -105,4 +108,3 @@
 
 </body>
 </html>
-
