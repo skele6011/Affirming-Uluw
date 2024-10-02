@@ -1,151 +1,67 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Affirming Uluw For Allah</title>
-    <link rel="stylesheet" href="style.css"> 
-    <style>
-        /* Reset default margins and paddings */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+/* Reset default margins and paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        /* Style for the body */
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-        }
+/* Body styling */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+}
 
-        /* Navigation bar styles */
-        .navbar {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background-color: #333;
-            padding: 10px 0;
-            display: flex;
-            justify-content: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            z-index: 1000;
-        }
+/* Header styling */
+header {
+    background: #333;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
 
-        .navbar a {
-            color: white;
-            padding: 14px 20px;
-            text-decoration: none;
-            text-align: center;
-            font-size: 18px;
-            position: relative; /* Necessary for positioning the dropdown */
-        }
+.navbar {
+    margin: 20px 0;
+}
 
-        .navbar a:hover {
-            background-color: #575757;
-        }
+.navbar ul {
+    list-style: none;
+}
 
-        /* Dropdown menu styles */
-        .menu {
-            display: none; /* Hidden by default */
-            position: absolute; /* Positioned relative to the parent link */
-            background-color: #f9f9f9;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            padding: 10px;
-            z-index: 1000;
-        }
+.navbar ul li {
+    display: inline;
+    margin: 0 15px;
+}
 
-        /* Show the menu on hover */
-        .navbar a:hover .menu {
-            display: block;
-        }
+.navbar a {
+    color: white;
+    text-decoration: none;
+}
 
-        .menu a {
-            display: block;
-            padding: 8px;
-            color: #333;
-            text-decoration: none;
-        }
+.navbar a:hover {
+    text-decoration: underline;
+}
 
-        .menu a:hover {
-            background-color: #ddd; /* Change background on hover */
-        }
+/* Main content styling */
+.content {
+    padding: 20px;
+}
 
-        /* Add margin to the content so it's not hidden behind the fixed navbar */
-        .content {
-            margin-top: 60px; /* Adjust based on the height of the navbar */
-        }
+section {
+    margin: 20px 0;
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
 
-        /* Section styles */
-        section {
-            padding: 60px 20px;
-            height: 100vh; /* Ensures each section takes up the full height of the viewport */
-            border-bottom: 2px solid #ccc;
-        }
-
-        #quran {
-            background-color: #f0f0f0;
-        }
-
-        #sunnah {
-            background-color: #e0e0e0;
-        }
-
-        #salaf {
-            background-color: #d0d0d0;
-        }
-    </style>
-</head>
-<body>
-
-    <!-- Navigation bar -->
-    <div class="navbar">
-        <a href="#quran">With Translation
-            <div class="menu">
-                <a href="#quran">Qur'an</a>
-                <a href="#sunnah">Sunnah</a>
-                <a href="#salaf">Salaf</a>
-            </div>
-        </a>
-        <a href="#sunnah">Without Translation
-            <div class="menu">
-                <!-- Empty menu for now -->
-            </div>
-        </a>
-    </div>
-
-    <!-- Content -->
-    <div class="content">
-        <section id="quran">
-            <h2>With Translation</h2>
-            <p>This section is about content with translation, such as Quran translations.</p>
-        </section>
-
-        <section id="sunnah">
-            <h2>Without Translation</h2>
-            <p>This section is for content without translation, such as original Arabic texts or other untranslated works.</p>
-        </section>
-
-        <section id="salaf">
-            <h2>The Salaf</h2>
-            <p>This section is intended for content about the Salaf (early generations of Islam).</p>
-        </section>
-    </div>
-
-    <script>
-        // Smooth scrolling behavior for navigation links
-        document.querySelectorAll('.navbar a').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                const menu = this.querySelector('.menu');
-                if (menu) {
-                    e.preventDefault(); // Prevent default if there is a dropdown
-                }
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
-
-</body>
-</html>
+/* Footer styling */
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background: #333;
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
