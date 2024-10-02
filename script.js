@@ -3,9 +3,11 @@ function toggleMenu() {
     const main = document.querySelector("main");
     sidebar.classList.toggle("active");
     
-    // On larger screens, toggle main content margin
-    if (window.innerWidth >= 769) {
-        main.style.marginLeft = sidebar.classList.contains("active") ? "250px" : "0";
+    // Adjust main content margin
+    if (sidebar.classList.contains("active")) {
+        main.style.marginTop = sidebar.offsetHeight + "px";
+    } else {
+        main.style.marginTop = "0";
     }
 }
 
@@ -16,9 +18,7 @@ document.addEventListener("click", function(event) {
     
     if (!sidebar.contains(event.target) && !hamburger.contains(event.target)) {
         sidebar.classList.remove("active");
-        if (window.innerWidth >= 769) {
-            document.querySelector("main").style.marginLeft = "0";
-        }
+        document.querySelector("main").style.marginTop = "0";
     }
 });
 
@@ -27,9 +27,9 @@ window.addEventListener("resize", function() {
     const sidebar = document.getElementById("sidebar");
     const main = document.querySelector("main");
     
-    if (window.innerWidth < 769) {
-        main.style.marginLeft = "0";
+    if (sidebar.classList.contains("active")) {
+        main.style.marginTop = sidebar.offsetHeight + "px";
     } else {
-        main.style.marginLeft = sidebar.classList.contains("active") ? "250px" : "0";
+        main.style.marginTop = "0";
     }
 });
