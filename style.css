@@ -1,1 +1,89 @@
+/* Reset default margins and paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Style for the body */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* Navigation bar styles */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #333;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.navbar a {
+    color: white;
+    padding: 14px 20px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 18px;
+    position: relative; /* Necessary for positioning the dropdown */
+}
+
+.navbar a:hover {
+    background-color: #575757;
+}
+
+/* Dropdown menu styles */
+.menu {
+    display: none; /* Hidden by default */
+    position: absolute; /* Positioned relative to the parent link */
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    z-index: 1000;
+}
+
+/* Show the menu on hover */
+.navbar a:hover .menu {
+    display: block;
+}
+
+.menu a {
+    display: block;
+    padding: 8px;
+    color: #333;
+    text-decoration: none;
+}
+
+.menu a:hover {
+    background-color: #ddd; /* Change background on hover */
+}
+
+/* Add margin to the content so it's not hidden behind the fixed navbar */
+.content {
+    margin-top: 60px; /* Adjust based on the height of the navbar */
+}
+
+/* Section styles */
+section {
+    padding: 60px 20px;
+    height: 100vh; /* Ensures each section takes up the full height of the viewport */
+    border-bottom: 2px solid #ccc;
+}
+
+#quran {
+    background-color: #f0f0f0;
+}
+
+#sunnah {
+    background-color: #e0e0e0;
+}
+
+#salaf {
+    background-color: #d0d0d0;
+}
 
