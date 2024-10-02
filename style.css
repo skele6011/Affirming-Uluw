@@ -1,85 +1,26 @@
-/* Reset default margins and paddings */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* ... your existing styles ... */
 
-/* Body styling */
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-}
-
-/* Header styling */
-header {
-    background: #333; /* Header background color */
-    color: white; /* Header text color */
-    padding: 10px; /* Header padding */
-    display: flex; /* Flexbox for layout */
-    justify-content: space-between; /* Space between items */
-    align-items: center; /* Center items vertically */
-}
-
-/* Hamburger Menu */
-.hamburger {
-    cursor: pointer; /* Pointer cursor on hover */
-    font-size: 24px; /* Hamburger icon size */
-}
-
-/* Navigation Menu */
 .sidebar {
-    width: 200px; /* Width of the sidebar */
-    background: orange; /* Orange background */
-    position: absolute; /* Positioning */
-    top: 50px; /* Below the header */
-    left: -220px; /* Initially hidden off-screen */
-    transition: left 0.3s ease; /* Smooth transition for menu */
-    padding: 15px; /* Padding */
+    position: fixed;
+    top: 0;
+    left: -250px; /* Start off-screen */
+    width: 250px;
+    height: 100%;
+    background-color: #f1f1f1;
+    transition: left 0.3s ease;
 }
 
 .sidebar.active {
-    left: 0; /* Move into view when active */
+    left: 0; /* Slide in when active */
 }
 
-.sidebar ul {
-    list-style: none; /* No bullets */
+.hamburger {
+    cursor: pointer;
+    /* Add any additional styling for the hamburger button */
 }
 
-.sidebar ul li {
-    margin: 15px 0; /* Space between menu items */
-}
-
-.sidebar a {
-    text-decoration: none; /* No underlines */
-    color: white; /* Text color */
-}
-
-.sidebar a:hover {
-    text-decoration: underline; /* Underline on hover */
-}
-
-/* Main content styling */
-main {
-    padding: 20px; /* Space around main content */
-}
-
-/* Section styling */
-section {
-    margin: 20px 0; /* Space between sections */
-    background: white; /* Section background */
-    padding: 20px; /* Space within sections */
-    border-radius: 5px; /* Rounded corners */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow */
-}
-
-/* Footer styling */
-footer {
-    text-align: center; /* Centered text */
-    padding: 10px 0; /* Padding */
-    background: #333; /* Footer background */
-    color: white; /* Footer text color */
-    position: relative; /* Positioning */
-    bottom: 0; /* Stick to the bottom */
-    width: 100%; /* Full width */
+@media (max-width: 768px) {
+    main {
+        margin-left: 0;
+    }
 }
