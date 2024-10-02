@@ -8,11 +8,11 @@
 </head>
 <body>
     <header>
-        <div class="hamburger" onclick="toggleMenu()">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
+        <button class="hamburger" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
         <h1>Affirming Uluw for Allah</h1>
     </header>
 
@@ -28,16 +28,6 @@
         <p>Main content here.</p>
     </main>
 
-    <script>
-        // Inline script for debugging
-        console.log("Inline script loaded");
-        function inlineToggleMenu() {
-            console.log("Toggle menu called");
-            var sidebar = document.getElementById("sidebar");
-            sidebar.classList.toggle("active");
-            console.log("Sidebar classes:", sidebar.className);
-        }
-    </script>
     <script src="script.js"></script>
 </body>
 </html>
