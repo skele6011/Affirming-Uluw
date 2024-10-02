@@ -1,30 +1,31 @@
 document.addEventListener('DOMContentLoaded', function() {
     const hamburger = document.querySelector('.hamburger');
     const sidebar = document.getElementById('sidebar');
-    const modal = document.getElementById('image-modal');
-    const modalImg = document.getElementById("img01");
-    const closeBtn = document.getElementsByClassName("close")[0];
-    const sahabaImage = document.querySelector('.sahaba-image');
+    const main = document.querySelector('main');
 
     function toggleMenu() {
         sidebar.classList.toggle('active');
     }
 
-    hamburger.addEventListener('click', toggleMenu);
-
-    // Image modal functionality
-    sahabaImage.onclick = function() {
-        modal.style.display = "block";
-        modalImg.src = this.src;
+    function closeMenu() {
+        sidebar.classList.remove('active');
     }
 
-    closeBtn.onclick = function() {
-        modal.style.display = "none";
-    }
+    hamburger.addEventListener('click', function(event) {
+        event.stopPropagation();
+        toggleMenu();
+    });
 
-    window.onclick = function(event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
+    // Close menu when clicking outside
+    document.addEventListener('click', function(event) {
+        const isClickInside = sidebar.contains(event.target) || hamburger.contains(event.target);
+        if (!isClickInside && sidebar.classList.contains('active')) {
+            closeMenu();
         }
-    }
+    });
+
+    // Prevent clicks inside the sidebar from closing it
+    sidebar.addEventListener('click', function(event) {
+        event.stopPropagation();
+    });
 });
