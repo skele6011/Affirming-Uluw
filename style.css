@@ -86,12 +86,12 @@ main {
     margin: 0 auto;
 }
 
-#sunnah ul, #salaf ul {
+#sunnah ul, #salaf ul, #quran ul {
     list-style-type: none;
     padding: 0;
 }
 
-#sunnah li, #salaf li {
+#sunnah li, #salaf li, #quran li {
     margin-bottom: 20px;
 }
 
@@ -153,4 +153,9 @@ main {
     .sahaba-image {
         max-width: 750px;
     }
+}
+
+span[lang="ar"] {
+    font-family: 'Traditional Arabic', 'Scheherazade', serif;
+    font-size: 1.2em;
 }
