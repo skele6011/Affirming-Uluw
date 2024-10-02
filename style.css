@@ -12,7 +12,7 @@ header {
 }
 
 h1 {
-    margin: 0 0 0 1rem;
+    margin: 0 0 0 2rem; /* Increased left margin to move title to the right */
     color: white;
 }
 
@@ -38,10 +38,10 @@ h1 {
 
 .sidebar {
     position: fixed;
-    top: 60px; /* Adjust based on your header height */
+    top: 0;
     left: 0;
     width: 250px;
-    height: calc(100% - 60px); /* Subtract header height */
+    height: 100%;
     background-color: rgba(243, 156, 18, 0.9);
     transform: translateX(-100%);
     transition: transform 0.3s ease;
@@ -55,6 +55,7 @@ h1 {
 .sidebar ul {
     list-style-type: none;
     padding: 20px;
+    margin-top: 60px; /* Add space for the header */
 }
 
 .sidebar ul li {
