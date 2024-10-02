@@ -1,3 +1,6 @@
+body {
+    background-color: lightblue;
+}
 :root {
     --dark-orange: #D35400;
     --light-orange: #F39C12;
