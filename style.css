@@ -48,6 +48,22 @@ h3 {
     transition: all 0.3s ease;
 }
 
+#overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+.sidebar {
+    /* ... existing styles ... */
+    z-index: 1000; /* Ensure sidebar is above overlay */
+}
+
 .sidebar {
     position: fixed;
     top: 0;
