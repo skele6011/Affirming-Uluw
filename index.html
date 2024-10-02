@@ -4,17 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Informational Website</title>
-    <link rel="stylesheet" href="style.css"> <!-- Link to the CSS file (optional) -->
+    <link rel="stylesheet" href="style.css"> <!-- Link to the CSS file -->
 </head>
 <body>
 
     <!-- Header Section -->
     <header>
         <h1>Informational Website</h1>
+        <div class="hamburger" onclick="toggleMenu()">
+            &#9776; <!-- Hamburger icon -->
+        </div>
     </header>
 
     <!-- Navigation Menu -->
-    <nav class="sidebar">
+    <nav class="sidebar" id="sidebar">
         <ul>
             <li><a href="#quran">The Qur'an</a></li>
             <li><a href="#sunnah">The Sunnah/The Sahaba</a></li>
@@ -44,6 +47,13 @@
     <footer>
         <p>&copy; 2024 Informational Website. All rights reserved.</p>
     </footer>
+
+    <script>
+        function toggleMenu() {
+            const sidebar = document.getElementById("sidebar");
+            sidebar.classList.toggle("active"); // Toggle the "active" class to show/hide the menu
+        }
+    </script>
 
 </body>
 </html>
