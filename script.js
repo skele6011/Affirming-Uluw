@@ -1,31 +1,36 @@
 document.addEventListener('DOMContentLoaded', function() {
     const hamburger = document.querySelector('.hamburger');
     const sidebar = document.getElementById('sidebar');
-    const main = document.querySelector('main');
+    const overlay = document.getElementById('overlay');
 
-    function toggleMenu() {
-        sidebar.classList.toggle('active');
+    function openMenu() {
+        sidebar.classList.add('active');
+        overlay.style.display = 'block';
+        document.body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
     }
 
     function closeMenu() {
         sidebar.classList.remove('active');
+        overlay.style.display = 'none';
+        document.body.style.overflow = ''; // Re-enable scrolling
     }
 
     hamburger.addEventListener('click', function(event) {
         event.stopPropagation();
-        toggleMenu();
-    });
-
-    // Close menu when clicking outside
-    document.addEventListener('click', function(event) {
-        const isClickInside = sidebar.contains(event.target) || hamburger.contains(event.target);
-        if (!isClickInside && sidebar.classList.contains('active')) {
+        if (sidebar.classList.contains('active')) {
             closeMenu();
+        } else {
+            openMenu();
         }
     });
 
-    // Prevent clicks inside the sidebar from closing it
-    sidebar.addEventListener('click', function(event) {
-        event.stopPropagation();
+    // Close menu when clicking on the overlay
+    overlay.addEventListener('click', closeMenu);
+
+    // Close menu when pressing Escape key
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape' && sidebar.classList.contains('active')) {
+            closeMenu();
+        }
     });
 });
