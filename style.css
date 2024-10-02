@@ -12,7 +12,7 @@ header {
 }
 
 h1 {
-    margin: 0 0 0 2rem; /* Increased left margin to move title to the right */
+    margin: 0 0 0 2rem;
     color: white;
 }
 
@@ -26,7 +26,7 @@ h1 {
     height: 24px;
     width: 30px;
     padding: 0;
-    z-index: 1001; /* Ensure it's above the sidebar */
+    z-index: 1001;
 }
 
 .hamburger span {
@@ -55,7 +55,7 @@ h1 {
 .sidebar ul {
     list-style-type: none;
     padding: 20px;
-    margin-top: 60px; /* Add space for the header */
+    margin-top: 60px;
 }
 
 .sidebar ul li {
