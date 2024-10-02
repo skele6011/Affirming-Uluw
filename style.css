@@ -87,9 +87,9 @@ main {
     margin: 13px 0;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 800px) {
     .sahaba-image {
-        max-width: 500px; /* Adjust this value as needed */
+        max-width: 750px; /* Adjust this value as needed */
         margin: 10px auto;
     }
 }
