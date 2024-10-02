@@ -1,29 +1,14 @@
-:root {
-    --dark-orange: #D35400;
-    --light-orange: #F39C12;
-    --dark-blue: #2C3E50;
-    --light-blue: #3498DB;
-    --off-white: #ECF0F1;
-}
-
-body {
-    font-family: Arial, sans-serif;
+body, html {
     margin: 0;
     padding: 0;
-    background-color: var(--off-white);
-    color: var(--dark-blue);
+    font-family: Arial, sans-serif;
 }
 
 header {
-    background-color: var(--dark-orange);
-    color: var(--off-white);
+    background-color: #D35400;
     padding: 1rem;
     display: flex;
     align-items: center;
-}
-
-h1 {
-    margin: 0 0 0 1rem;
 }
 
 .hamburger {
@@ -39,22 +24,19 @@ h1 {
 }
 
 .hamburger span {
-    background-color: var(--off-white);
+    background-color: white;
     height: 3px;
     width: 100%;
-    transition: all 0.3s ease;
 }
 
 .sidebar {
     position: fixed;
     top: 0;
     left: 0;
-    width: 250px;
-    height: 100%;
-    background-color: rgba(243, 156, 18, 0.9); /* Semi-transparent light orange */
+    width: 100%;
+    background-color: rgba(243, 156, 18, 0.9);
     transform: translateY(-100%);
     transition: transform 0.3s ease;
-    z-index: 1000;
 }
 
 .sidebar.active {
@@ -66,33 +48,6 @@ h1 {
     padding: 20px;
 }
 
-.sidebar ul li {
-    margin-bottom: 10px;
-}
-
-.sidebar ul li a {
-    color: var(--dark-blue);
-    text-decoration: none;
-    font-size: 1.1em;
-}
-
 main {
     padding: 20px;
-    transition: margin-top 0.3s ease;
-}
-
-/* ... (keep other styles) ... */
-
-@media (min-width: 769px) {
-    .sidebar {
-        transform: translateY(-100%);
-    }
-    
-    main {
-        margin-top: 0;
-    }
-    
-    .sidebar.active + main {
-        margin-top: 0;
-    }
 }
