@@ -71,3 +71,11 @@ h1 {
 main {
     padding: 20px;
 }
+.sahaba-image {
+    max-width: 100%;
+    height: auto;
+    width: 500px; /* Adjust this value as needed */
+    display: block;
+    margin: 20px auto; /* Centers the image and adds some vertical space */
+}
+
