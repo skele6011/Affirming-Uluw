@@ -125,7 +125,7 @@ main {
 }
 
 .sahaba-image:hover {
-    transform: scale(1.10);
+    transform: scale(1.05);
 }
 
 .scan1-image {
@@ -137,7 +137,7 @@ main {
     transition: transform 0.3s ease;
 }
 .scan1-image: hover {
-    transform: scale(1.10);
+    transform: scale(1.05);
 }
 
 .modal {
