@@ -2,6 +2,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const hamburger = document.querySelector('.hamburger');
     const sidebar = document.getElementById('sidebar');
     const overlay = document.getElementById('overlay');
+    const modal = document.getElementById('image-modal');
+    const modalImg = document.getElementById('img01');
 
     function openMenu() {
         sidebar.classList.add('active');
@@ -33,4 +35,21 @@ document.addEventListener('DOMContentLoaded', function() {
             closeMenu();
         }
     });
+
+    // Image modal functionality
+    window.openModal = function(img) {
+        modal.style.display = "block";
+        modalImg.src = img.src;
+    }
+
+    window.closeModal = function() {
+        modal.style.display = "none";
+    }
+
+    // Close modal when clicking outside the image
+    modal.onclick = function(event) {
+        if (event.target === modal) {
+            closeModal();
+        }
+    }
 });
