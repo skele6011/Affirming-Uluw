@@ -125,10 +125,10 @@ main {
 }
 
 .sahaba-image:hover {
-    transform: scale(1.5);
+    transform: scale(1.10);
 }
 
-.Scan1-image {
+.scan1-image {
     max-width: 100%;
     height: auto;
     display: block;
@@ -136,8 +136,8 @@ main {
     cursor: pointer;
     transition: transform 0.3s ease;
 }
-.Scan1-image: hover {
-    transform: scale(1.5);
+.scan1-image: hover {
+    transform: scale(1.10);
 }
 
 .modal {
