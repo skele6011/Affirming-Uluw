@@ -128,17 +128,6 @@ main {
     transform: scale(1.05);
 }
 
-.scan1-image {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 13px auto;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-.scan1-image: hover {
-    transform: scale(1.05);
-}
 
 .modal {
     display: none;
